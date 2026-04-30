@@ -1,64 +1,62 @@
-# Astro Starter Kit: Blog
+# Brandon Sayre Consulting Website
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+A Next.js website for Brandon Sayre Consulting, a shipping company. The website allows customers to inquire about better shipping deals through a contact form.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Features
 
-<!-- dash-content-start -->
-
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
-
-<!-- dash-content-end -->
+- Responsive design with Tailwind CSS
+- Contact form for shipping inquiries
+- API endpoint to handle form submissions
+- TypeScript support
 
 ## Getting Started
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+First, install dependencies:
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+npm install
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+Then, run the development server:
 
-## 🚀 Project Structure
+```bash
+npm run dev
+```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Project Structure
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+- `app/page.tsx` - Main homepage with company info and contact form
+- `app/api/contact/route.ts` - API route for handling form submissions
+- `components/ContactForm.tsx` - Client component for the contact form
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Technologies Used
 
-## 🧞 Commands
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
 
-All commands are run from the root of the project, from a terminal:
+## Deployment
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+This app can be deployed on Vercel, Netlify, or any platform supporting Next.js.
 
-## 👀 Want to learn more?
+### Email setup
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+A `.env.local` file has been created in the project root with the SMTP credentials needed for email delivery.
 
-## Credit
+If you want to update these values later, edit `.env.local` directly.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Then restart the dev server.
+
+For Gmail, use an App Password if your account has 2-step verification enabled.
+
+For Vercel deployment:
+
+```bash
+npm run build
+```
+
+Then deploy the `.next` folder and other necessary files.
